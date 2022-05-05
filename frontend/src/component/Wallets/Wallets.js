@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Redirect } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import discord from "../../assets/discord.svg";
 import telegram from "../../assets/telegram.svg";

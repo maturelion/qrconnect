@@ -1,30 +1,23 @@
 import React from "react";
-// import errorqrcode from "../../assets/errorqrcode.png";
+import "./Success.css";
+import errorqrcode from "../../assets/barcode.png";
 
 const Success = () => {
   return (
-    <div
-      style={{
-        height: "100vh",
-        backgroundColor: "black",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <img
-        style={{ marginBottom: "10px" }}
-        src={"errorqrcode"}
-        alt="errorqrcode"
-        height="100"
-        width="100"
-      />
-      <div style={{ marginBottom: "10px" }}>PLEASE CONTACT</div>
-      <div style={{ marginBottom: "10px", color: "red" }}>ADMIN/SUPPORT</div>
-      <div style={{ marginBottom: "10px" }}>FOR AUTHENTICATION</div>
-    </div>
+    <>
+      <div class="main-body">
+        <div class="container">
+          <h3 style={{ color: "rgb(65, 141, 241)" }}>
+            QR CODE Generated successfully
+          </h3>
+          <img src={errorqrcode} style={{ height: "350px" }} alt="wallet_img" />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
+    </>
   );
 };
 
