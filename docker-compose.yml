@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    command: yarn start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/frontend
+  backend:
+    build:
+      context: ./backend
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/usr/src/backend
+    ports:
+      - "8000:8000"
