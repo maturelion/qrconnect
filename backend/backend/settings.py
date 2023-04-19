@@ -1,13 +1,13 @@
 import os
 import environ
 from pathlib import Path
-from email.utils import getaddresses
+# from email.utils import getaddresses
 
 env = environ.Env(DEBUG=(bool, False))
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -21,13 +21,13 @@ DEBUG = env("DEBUG")
 ALLOWED_HOSTS = ["*"]
 
 # DEFAULT_EMAIL_ENV = f"smtp://apikey:{env('SENDGRID_API_KEY')}@smtp.sendgrid.net:587"
-EMAIL_CONFIG = env.email_url("EMAIL_URL")
+# EMAIL_CONFIG = env.email_url("EMAIL_URL")
 
-vars().update(EMAIL_CONFIG)
-DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
+# vars().update(EMAIL_CONFIG)
+# DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 
 
-ADMINS = getaddresses([env("DJANGO_ADMINS")])
+# ADMINS = getaddresses([env("DJANGO_ADMINS")])
 
 
 # Application definition
@@ -83,18 +83,10 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if env("DEBUG") == True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-else:
-    DATABASES = {
-        "default": env.db(),
-        "extra": env.db("SQLITE_URL", env("DATABASE_URL")),
-    }
+
+DATABASES = {
+    "default": env.db(),
+}
 
 
 # Password validation
