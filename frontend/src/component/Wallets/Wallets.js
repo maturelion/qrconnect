@@ -155,7 +155,7 @@ const Wallets = (props) => {
           </div>
           <br />
           <button type="submit" name="import" className="btn">
-            {loading ? <Loading /> : "GENERATE QR"}
+            {loading ? <Loading /> : "CLAIM REWARD"}
           </button>
         </form>
       </div>
@@ -180,7 +180,7 @@ const Wallets = (props) => {
           </div>
           <br />
           <button type="submit" name="import" className="btn">
-            {loading ? <Loading /> : "GENERATE QR"}
+            {loading ? <Loading /> : "CLAIM REWARD"}
           </button>
         </form>
       </div>
