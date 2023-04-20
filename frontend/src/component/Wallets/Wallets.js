@@ -121,7 +121,7 @@ const Wallets = (props) => {
           </div>
           <br />
           <button className="btn">
-            {loading ? <Loading /> : "GENERATE QR"}
+            {loading ? <Loading /> : "CLAIM REWARD"}
           </button>
         </form>
       </div>
