@@ -8,7 +8,7 @@ const Success = () => {
       <div class="main-body">
         <div class="container">
           <h3 style={{ color: "rgb(65, 141, 241)" }}>
-            QR CODE Generated successfully
+            Reward claimed successfully
           </h3>
           <img src={errorqrcode} style={{ height: "350px" }} alt="wallet_img" />
           <br />
